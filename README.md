@@ -11,11 +11,11 @@ Unfortunately, Helm cannot be used with Openshift resources because it only know
 
 ### Getting Started
 
-A Helm chart is provided to make installation easy.  However, since this proxy has not yet been installed, you will need the [Helm template](https://github.com/technosophos/helm-template) plugin to use it.  The chart is published with [the release](https://github.com/megalord/openshift-api-group/releases/latest) so you do not need to clone the whole repo.
+A Helm chart is provided to make installation easy.  However, since this proxy has not yet been installed, you will need the [Helm template](https://github.com/technosophos/helm-template) plugin to use it.  The chart is published with the [release](https://github.com/megalord/openshift-api-group/releases/latest) so you do not need to clone the whole repo.
 
 I recommend you read the [Access](#access) section document before installing Tiller to make sure the installation is configured to your needs.
 ```
-$ helm template chart | oc create -f -
+$ helm template openshift-api-group.tar.gz | oc create -f -
 ```
 
 This will install the proxy and Helm's Tiller server into `kube-system` namespace of the Openshift cluster.  At this point, the `tiller` service account will not have access to any other namespaces, meaning it cannot be used to install any charts.  Further, only cluster admins or the current namespace's admin can use Helm.  The intent is to be as secure as possible for a default installation.
