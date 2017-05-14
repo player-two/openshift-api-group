@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: tiller
+spec:
+  replicas: 1
+  selector:
+    app: helm
+    name: tiller
+  strategy:
+    type: Rolling
+  template:
+    metadata:
+      # The helm client uses these labels to find tiller.
+      labels:
+        app: helm
+        name: tiller
+    spec:
+      serviceAccountName: tiller
+      containers:
+      - name: openshift-api-group
+        ports:
+        - containerPort: 8080
+          name: web
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+            scheme: HTTP
+      - name: tiller
+        image: 'gcr.io/kubernetes-helm/tiller:{{ .Values.tillerVersion }}'
+        env:
+        - name: TILLER_NAMESPACE
+          value: {{ .Values.namespace }}
+        # https://github.com/kubernetes/client-go/blob/v2.0.0/tools/clientcmd/client_config.go#L53
+        # Once this is removed, the proxy will need to support ssl
+        - name: KUBERNETES_SERVICE_HOST
+        - name: KUBERNETES_SERVICE_PORT
+        - name: KUBERNETES_MASTER
+          value: 'localhost:8080'
+        ports:
+        - containerPort: 44134
+          name: tiller
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /liveness
+            port: 44135
+            scheme: HTTP
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: 44135
+            scheme: HTTP
+        volumeMounts:
+        - mountPath: /.kube
+          name: kube
+      volumes:
+      - emptyDir: {}
+        name: kube
+  triggers:
+  - type: ImageChange
+    imageChangeParams:
+      automatic: true
+      containerNames:
+      - openshift-api-group
+      from:
+        kind: ImageStreamTag
+        name: openshift-api-group:latest

@@ -1,0 +1,12 @@
+{{- if .Values.clusterAdmin }}
+apiVersion: v1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller-cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: tiller
+  namespace: {{ .Values.namespace }}
+roleRef:
+  name: cluster-admin
+{{- end }}

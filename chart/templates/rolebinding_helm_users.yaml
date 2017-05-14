@@ -1,0 +1,9 @@
+{{- if .Values.createUsersRole }}
+apiVersion: v1
+kind: RoleBinding
+metadata:
+  name: helm-users
+subjects: []
+roleRef:
+  name: helm-user
+{{- end }}

@@ -1,0 +1,7 @@
+# Allows non cluster admins to use helm
+createUsersRole: false
+# Make the tiller service account a cluster admin
+clusterAdmin: false
+namespace: kube-system
+version: v0.1.0
+tillerVersion: v2.3.1

@@ -1,0 +1,14 @@
+{{- if eq .Values.namespace "kube-system" }}
+apiVersion: v1
+kind: RoleBinding
+metadata:
+  name: system:image-pullers
+roleRef:
+  name: system:image-puller
+subjects:
+- kind: SystemGroup
+  name: system:serviceaccounts:{{ .Values.namespace }}
+groupNames:
+- system:serviceaccounts:{{ .Values.namespace }}
+userNames: null
+{{- end }}

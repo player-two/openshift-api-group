@@ -1,0 +1,11 @@
+{{- if .Values.createUsersRole }}
+apiVersion: v1
+kind: ClusterRole # Cannot be Role, see https://github.com/openshift/origin/issues/14078
+metadata:
+  name: helm-user
+rules:
+- verbs: ["list"]
+  resources: ["pods"]
+- verbs: ["create"]
+  resources: ["pods/portforward"]
+{{- end }}
