@@ -1,5 +1,5 @@
 {{- if .Values.createUsersRole }}
-apiVersion: v1
+apiVersion: {{ include "apiVersion" . }}
 kind: ClusterRole # Cannot be Role, see https://github.com/openshift/origin/issues/14078
 metadata:
   name: helm-user

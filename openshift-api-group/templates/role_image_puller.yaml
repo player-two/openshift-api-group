@@ -1,5 +1,5 @@
 {{- if eq .Release.Namespace "kube-system" }}
-apiVersion: v1
+apiVersion: {{ include "apiVersion" . }}
 kind: RoleBinding
 metadata:
   name: system:image-pullers

@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: {{ include "apiVersion" . }}
 kind: RoleBinding
 metadata:
   name: tiller-admin

@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: {{ include "apiVersion" . }}
 kind: BuildConfig
 metadata:
   name: openshift-api-group

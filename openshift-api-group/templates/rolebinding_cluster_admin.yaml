@@ -1,5 +1,5 @@
 {{- if .Values.clusterAdmin }}
-apiVersion: v1
+apiVersion: {{ include "apiVersion" . }}
 kind: ClusterRoleBinding
 metadata:
   name: tiller-cluster-admin

@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: {{ include "apiVersion" . }}
 kind: DeploymentConfig
 metadata:
   name: tiller
