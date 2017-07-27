@@ -1,4 +1,4 @@
-{{- if eq .Values.namespace "kube-system" }}
+{{- if eq .Release.Namespace "kube-system" }}
 apiVersion: v1
 kind: RoleBinding
 metadata:
@@ -10,5 +10,5 @@ subjects:
   name: deployer
 groupNames: null
 userNames:
-- system:serviceaccount:{{ .Values.namespace }}:deployer
+- system:serviceaccount:{{ .Release.Namespace }}:deployer
 {{- end }}

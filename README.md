@@ -15,12 +15,12 @@ A Helm chart is provided to make installation easy.  However, since this proxy h
 
 I recommend you read the [Access](#access) section document before installing Tiller to make sure the installation is configured to your needs.
 ```
-$ helm template openshift-api-group.tar.gz | oc create -f -
+$ helm template -n kube-system openshift-api-group.tar.gz | oc create -f -
 ```
 
 This will install the proxy and Helm's Tiller server into `kube-system` namespace of the Openshift cluster.  At this point, the `tiller` service account will not have access to any other namespaces, meaning it cannot be used to install any charts.  Further, only cluster admins or the current namespace's admin can use Helm.  The intent is to be as secure as possible for a default installation.
 
-The `kube-system` namespace always exists in Openshift.  If you do not have access to it, or you do not want to use it, you can pass `--set namespace=<other namespace>` to `helm template`.  That namespace must already exist.  When using Helm thereafter, you must `export TILLER_NAMESPACE=<other namespace>` to let Helm know where the Tiller server is.
+The `kube-system` namespace always exists in Openshift.  If you do not have access to it, or you do not want to use it, you can pass `-n <other namespace>` to `helm template`.  That namespace must already exist.  When using Helm thereafter, you must `export TILLER_NAMESPACE=<other namespace>` to let Helm know where the Tiller server is.
 
 
 ### Access

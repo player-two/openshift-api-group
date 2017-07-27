@@ -32,7 +32,7 @@ spec:
         image: 'gcr.io/kubernetes-helm/tiller:{{ .Values.tillerVersion }}'
         env:
         - name: TILLER_NAMESPACE
-          value: {{ .Values.namespace }}
+          value: {{ .Release.Namespace }}
         # https://github.com/kubernetes/client-go/blob/v2.0.0/tools/clientcmd/client_config.go#L53
         # Once this is removed, the proxy will need to support ssl
         - name: KUBERNETES_SERVICE_HOST

@@ -1,4 +1,4 @@
-{{- if eq .Values.namespace "kube-system" }}
+{{- if eq .Release.Namespace "kube-system" }}
 apiVersion: v1
 kind: RoleBinding
 metadata:
@@ -7,8 +7,8 @@ roleRef:
   name: system:image-puller
 subjects:
 - kind: SystemGroup
-  name: system:serviceaccounts:{{ .Values.namespace }}
+  name: system:serviceaccounts:{{ .Release.Namespace }}
 groupNames:
-- system:serviceaccounts:{{ .Values.namespace }}
+- system:serviceaccounts:{{ .Release.Namespace }}
 userNames: null
 {{- end }}

@@ -4,4 +4,4 @@ createUsersRole: false
 clusterAdmin: false
 namespace: kube-system
 version: v0.1.0
-tillerVersion: v2.3.1
+tillerVersion: v2.5.1
