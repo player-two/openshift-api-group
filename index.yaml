@@ -2,7 +2,15 @@ apiVersion: v1
 entries:
   openshift-api-group:
   - apiVersion: v1
-    created: 2017-07-27T16:50:02.414468313-05:00
+    created: 2017-10-10T11:18:03.954570647-05:00
+    description: A Helm chart for Kubernetes
+    digest: e6f114c5a37ef3a7849604618325ead7b0a4ba31571c61e47214cf4b3ba179d1
+    name: openshift-api-group
+    urls:
+    - https://megalord.github.io/openshift-api-group/openshift-api-group-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    created: 2017-10-10T11:18:03.954301484-05:00
     description: A Helm chart for Kubernetes
     digest: 2558c02f5fc1110745a644bea847cceee434aaac4f2ab235b898f69ece59eb92
     name: openshift-api-group
@@ -10,11 +18,11 @@ entries:
     - https://megalord.github.io/openshift-api-group/openshift-api-group-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2017-07-27T16:50:02.414076618-05:00
+    created: 2017-10-10T11:18:03.954030134-05:00
     description: A Helm chart for Kubernetes
     digest: 228962fe346b4b670a611514921aedf92f977bf131b29d265566504122954ba0
     name: openshift-api-group
     urls:
     - https://megalord.github.io/openshift-api-group/openshift-api-group-0.1.0.tgz
     version: 0.1.0
-generated: 2017-07-27T16:50:02.413625519-05:00
+generated: 2017-10-10T11:18:03.953662104-05:00
