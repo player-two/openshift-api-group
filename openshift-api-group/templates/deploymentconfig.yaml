@@ -19,6 +19,9 @@ spec:
       serviceAccountName: tiller
       containers:
       - name: openshift-api-group
+        {{- if .Values.image }}
+        image: {{ .Values.image }}
+        {{- end }}
         ports:
         - containerPort: 8080
           name: web
