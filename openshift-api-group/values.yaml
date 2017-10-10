@@ -6,4 +6,4 @@ namespace: kube-system
 # `helm upgrade` will cause deployments to silently fail if "image" is not provided
 image:
 version: v0.1.0
-tillerVersion: v2.5.1
+tillerVersion: v2.6.2
