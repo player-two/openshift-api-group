@@ -3,6 +3,7 @@ apiVersion: {{ include "apiVersion" . }}
 kind: DeploymentConfig
 metadata:
   name: tiller
+{{ include "openshift-api-group.labels" . | indent 2 }}
 spec:
   replicas: 1
   selector:
@@ -16,6 +17,7 @@ spec:
       labels:
         app: helm
         name: tiller
+        release: {{ .Release.Name }}
     spec:
       serviceAccountName: tiller
       containers:

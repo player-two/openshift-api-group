@@ -3,4 +3,5 @@ apiVersion: {{ include "apiVersion" . }}
 kind: ImageStream
 metadata:
   name: openshift-api-group
+{{ include "openshift-api-group.labels" . | indent 2 }}
 {{- end }}

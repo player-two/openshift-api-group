@@ -3,6 +3,7 @@ apiVersion: {{ include "apiVersion" . }}
 kind: RoleBinding
 metadata:
   name: system:deployers
+{{ include "openshift-api-group.labels" . | indent 2 }}
 roleRef:
   name: system:deployer
 subjects:

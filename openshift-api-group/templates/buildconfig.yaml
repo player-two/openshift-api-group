@@ -3,6 +3,7 @@ apiVersion: {{ include "apiVersion" . }}
 kind: BuildConfig
 metadata:
   name: openshift-api-group
+{{ include "openshift-api-group.labels" . | indent 2 }}
 spec:
   resources: {}
   source:

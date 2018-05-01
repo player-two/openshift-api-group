@@ -3,6 +3,7 @@ apiVersion: {{ include "apiVersion" . }}
 kind: RoleBinding
 metadata:
   name: helm-users
+{{ include "openshift-api-group.labels" . | indent 2 }}
 subjects: []
 roleRef:
   name: helm-user

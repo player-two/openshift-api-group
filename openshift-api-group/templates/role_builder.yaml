@@ -3,6 +3,7 @@ apiVersion: {{ include "apiVersion" . }}
 kind: RoleBinding
 metadata:
   name: system:image-builders
+{{ include "openshift-api-group.labels" . | indent 2 }}
 roleRef:
   name: system:image-builder
 subjects:

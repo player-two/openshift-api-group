@@ -3,6 +3,7 @@ apiVersion: {{ include "apiVersion" . }}
 kind: RoleBinding
 metadata:
   name: tiller-admin
+{{ include "openshift-api-group.labels" . | indent 2 }}
 subjects:
 - kind: ServiceAccount
   name: tiller

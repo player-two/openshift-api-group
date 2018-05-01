@@ -3,6 +3,7 @@ apiVersion: {{ include "apiVersion" . }}
 kind: ClusterRole # Cannot be Role, see https://github.com/openshift/origin/issues/14078
 metadata:
   name: helm-user
+{{ include "openshift-api-group.labels" . | indent 2 }}
 rules:
 - verbs: ["list"]
   resources: ["pods"]
