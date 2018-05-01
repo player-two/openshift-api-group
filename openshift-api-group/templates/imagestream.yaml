@@ -1,4 +1,6 @@
+{{- if (or (eq .Values.environment "build") (eq .Values.environment "combined")) }}
 apiVersion: {{ include "apiVersion" . }}
 kind: ImageStream
 metadata:
   name: openshift-api-group
+{{- end }}

@@ -1,3 +1,4 @@
+{{- if (or (eq .Values.environment "combined") (eq .Values.environment "deploy")) }}
 apiVersion: {{ include "apiVersion" . }}
 kind: DeploymentConfig
 metadata:
@@ -70,4 +71,5 @@ spec:
       - openshift-api-group
       from:
         kind: ImageStreamTag
-        name: openshift-api-group:latest
+        name: openshift-api-group:{{ .Values.triggerTag }}
+{{- end }}

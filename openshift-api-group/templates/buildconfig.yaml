@@ -1,3 +1,4 @@
+{{- if (or (eq .Values.environment "build") (eq .Values.environment "combined")) }}
 apiVersion: {{ include "apiVersion" . }}
 kind: BuildConfig
 metadata:
@@ -21,3 +22,4 @@ spec:
       name: openshift-api-group:latest
   triggers:
   - type: ConfigChange
+{{- end }}

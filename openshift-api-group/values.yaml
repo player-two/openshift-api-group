@@ -2,8 +2,11 @@
 createUsersRole: false
 # Make the tiller service account a cluster admin
 clusterAdmin: false
+# build, deploy, combined
+environment: combined
 namespace: kube-system
 # `helm upgrade` will cause deployments to silently fail if "image" is not provided
 image:
+triggerTag: latest
 version: v0.1.0
 tillerVersion: v2.6.2

@@ -1,3 +1,4 @@
+{{- if (or (eq .Values.environment "combined") (eq .Values.environment "deploy")) }}
 apiVersion: {{ include "apiVersion" . }}
 kind: RoleBinding
 metadata:
@@ -7,3 +8,4 @@ subjects:
   name: tiller
 roleRef:
   name: admin
+{{- end }}
