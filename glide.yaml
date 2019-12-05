@@ -1,4 +1,4 @@
-package: github.com/megalord/openshift-api-group
+package: github.com/player-two/openshift-api-group
 import:
 - package: k8s.io/apimachinery
   version: release-1.6
