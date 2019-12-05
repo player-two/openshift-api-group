@@ -7,7 +7,7 @@ entries:
     digest: 65b2e182e104408541b6cafe8221692e56b2b76099c480269a99d69477edf173
     name: openshift-api-group
     urls:
-    - https://megalord.github.io/openshift-api-group/openshift-api-group-0.3.0.tgz
+    - https://player-two.github.io/openshift-api-group/openshift-api-group-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v1
     created: 2018-05-02T09:30:36.089262-05:00
@@ -15,7 +15,7 @@ entries:
     digest: e6f114c5a37ef3a7849604618325ead7b0a4ba31571c61e47214cf4b3ba179d1
     name: openshift-api-group
     urls:
-    - https://megalord.github.io/openshift-api-group/openshift-api-group-0.2.0.tgz
+    - https://player-two.github.io/openshift-api-group/openshift-api-group-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
     created: 2018-05-02T09:30:36.088766-05:00
@@ -23,7 +23,7 @@ entries:
     digest: 2558c02f5fc1110745a644bea847cceee434aaac4f2ab235b898f69ece59eb92
     name: openshift-api-group
     urls:
-    - https://megalord.github.io/openshift-api-group/openshift-api-group-0.1.1.tgz
+    - https://player-two.github.io/openshift-api-group/openshift-api-group-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
     created: 2018-05-02T09:30:36.088227-05:00
@@ -31,6 +31,6 @@ entries:
     digest: 228962fe346b4b670a611514921aedf92f977bf131b29d265566504122954ba0
     name: openshift-api-group
     urls:
-    - https://megalord.github.io/openshift-api-group/openshift-api-group-0.1.0.tgz
+    - https://player-two.github.io/openshift-api-group/openshift-api-group-0.1.0.tgz
     version: 0.1.0
 generated: 2018-05-02T09:30:36.087584-05:00
