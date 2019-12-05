@@ -7,7 +7,7 @@ spec:
   source:
     type: Git
     git:
-      uri: https://github.com/megalord/openshift-api-group.git
+      uri: https://github.com/player-two/openshift-api-group.git
       ref: {{ .Values.version }}
   strategy:
     type: Docker

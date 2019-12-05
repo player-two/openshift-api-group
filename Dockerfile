@@ -1,6 +1,6 @@
 FROM golang:1.8.1
 
-WORKDIR $GOPATH/src/github.com/megalord/openshift-api-group/
+WORKDIR $GOPATH/src/github.com/player-two/openshift-api-group/
 COPY glide.yaml glide.lock ./
 RUN go get -u github.com/Masterminds/glide && \
     glide install --strip-vendor
